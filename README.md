@@ -1,16 +1,5 @@
-# app_espaco_cultural
+# Flutter school AI's app
 
-A new Flutter project.
+## Summary
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### The idea is creating an app for students ask questions about subjects that they can choose on the mobile app. The response is integrated with [`openAI API`]("https://openia.com/api"), handled by mine [`Node.JS api`]("https://github.com/Matt-Ferraz/api-school-chat-app") avaiable on github.
