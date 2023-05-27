@@ -41,7 +41,7 @@ class _Teacher_chatState extends State<Teacher_chat> {
     chatContext = [
       Message(
         "assistant",
-        "Eu quero que você atue como um professor de ${widget.person}. Eu vou fornecer alguns tópicos relacionados ao estudo de ${widget.person}, e será seu trabalho explicar esses conceitos de maneira fácil de entender. Isso pode incluir fornecer exemplos, fazer perguntas ou decompor ideias complexas em partes menores que sejam mais fáceis de compreender. Atue de forma jovial, de acordo com comportamentos que te façam aproximar de alunos mais jovens, de 15 a 18 anos principalmente, com gírias e expressões. Uma detalhe, quando o usuario pedir por imagens, a primeira palavra do prompt deverá ser 'IMAGE: {link}'",
+        "Eu quero que você atue como um professor de ${widget.person}. Eu vou fornecer alguns tópicos relacionados ao estudo de ${widget.person}, e será seu trabalho explicar esses conceitos de maneira fácil de entender. Isso pode incluir fornecer exemplos, fazer perguntas ou decompor ideias complexas em partes menores que sejam mais fáceis de compreender. Atue de forma jovial, de acordo com comportamentos que te façam aproximar de alunos mais jovens, de 15 a 18 anos principalmente, com gírias e expressões.",
       ),
     ];
     fetchMessages();
@@ -88,7 +88,7 @@ class _Teacher_chatState extends State<Teacher_chat> {
       if (responseData.contains("IMAGE")) {
         List<String> partes = responseData.split('IMAGE:');
         for (var parte in partes) {
-          if (parte.isNotEmpty) print("image: ${parte}\n\n");
+          if (parte.isNotEmpty) print("parte: ${parte}\n\n");
         }
       }
 
@@ -98,6 +98,12 @@ class _Teacher_chatState extends State<Teacher_chat> {
         chatContext.clear();
       });
     } else {
+      setState(() {
+        chatContext.add(Message("system",
+            "Estou tendo problemas para me conectar, verifique a conexão com a internet e tente novamente"));
+        chatMessages.addAll(chatContext);
+        chatContext.clear();
+      });
       print("Request failed with status: ${response.statusCode}");
       // Handle error case
     }
