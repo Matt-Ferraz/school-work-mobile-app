@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'professor_chat.dart'; // Import the home screen file
+import 'teacher_chat.dart'; // Import the home screen file
 import 'package:lottie/lottie.dart';
 
 class Subject {
@@ -31,11 +31,26 @@ class SubjectSelection extends StatelessWidget {
     Subject(
         name: 'Sociologia',
         animation:
-            "https://assets1.lottiefiles.com/packages/lf20_9NxFrGo71i.json"),
+            "https://assets4.lottiefiles.com/packages/lf20_dx5nwnnb.json"),
     Subject(
-        name: 'Filosofia',
+        name: 'Biologia',
         animation:
-            "https://assets1.lottiefiles.com/packages/lf20_9NxFrGo71i.json"),
+            "https://assets10.lottiefiles.com/packages/lf20_DkTFNo.json"),
+    Subject(
+        name: 'Literatura',
+        animation:
+            "https://assets2.lottiefiles.com/packages/lf20_bnxoocv2.json"),
+    Subject(
+        name: 'Línguas',
+        animation: "https://assets3.lottiefiles.com/packages/lf20_HjK9Ol.json"),
+    Subject(
+        name: 'Programação',
+        animation:
+            "https://assets7.lottiefiles.com/packages/lf20_bzgbs6lx.json"),
+    Subject(
+        name: 'Química',
+        animation:
+            "https://assets10.lottiefiles.com/packages/lf20_aC7zKstsAk.json"),
   ];
 
   SubjectSelection({Key? key, required this.name}) : super(key: key);
@@ -94,7 +109,7 @@ class SubjectSelection extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        ProfessorChatScreen(name: name, person: sub.name),
+                        Teacher_chat(name: name, person: sub.name),
                   ),
                 );
               },
